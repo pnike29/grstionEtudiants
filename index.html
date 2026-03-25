@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CRUD Étudiants</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="px-[100px] bg-[url('https://i.pinimg.com/1200x/b8/99/0e/b8990edf612487986a7481149ff9c204.jpg')] bg-">
+    <h1 class="text-2xl font-bold text-center uppercase mt-5 mb-3   ">gestion
+        d'etudiant
+    </h1>
+    <div class="m-5">
+        <button id="openModal" class="bg-green-500 text-white px-4 py-2 rounded">Ajouter un étudiant</button>
+        <input type="text" id="recherche" placeholder="Rechercher..." class="border px-2 py-1 ml-5">
+
+        <table class="table-auto border-collapse border border-gray-400 w-full mt-5">
+            <thead class="bg-gray-200">
+                <tr>
+                    <th class="border px-2 py-1">ID</th>
+                    <th class="border px-2 py-1">Prénom</th>
+                    <th class="border px-2 py-1">Nom</th>
+                    <th class="border px-2 py-1">Age</th>
+                    <th class="border px-2 py-1">Moyenne</th>
+                    <th class="border px-2 py-1">Actions</th>
+                </tr>
+            </thead>
+            <tbody id="tableau"></tbody>
+        </table>
+
+        <div class="flex justify-between mt-3">
+            <button id="prev" class="bg-gray-500 text-white px-3 py-1 rounded">Précédent</button>
+            <button id="next" class="bg-gray-500 text-white px-3 py-1 rounded">Suivant</button>
+        </div>
+    </div>
+
+    <!-- Modal Ajouter / Modifier -->
+    <div id="modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+        <div class="bg-white p-5 rounded w-96">
+            <h2 class="text-xl mb-3">Ajouter / Modifier Étudiant</h2>
+            <input id="prenom" placeholder="Prénom" class="border w-full mb-2 px-2 py-1">
+            <input id="nom" placeholder="Nom" class="border w-full mb-2 px-2 py-1">
+            <input id="age" placeholder="Age" class="border w-full mb-2 px-2 py-1">
+            <input id="moyenne" placeholder="Moyenne" class="border w-full mb-2 px-2 py-1">
+            <div class="flex justify-end mt-3">
+                <button id="closeModal" class="bg-gray-500 text-white px-3 py-1 rounded mr-2">Annuler</button>
+                <button id="save" class="bg-green-500 text-white px-3 py-1 rounded">Sauvegarder</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Voir -->
+    <div id="modals" class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+        <div class="bg-white p-5 rounded w-96">
+            <div id="modalContent"></div>
+            <button id="fermerModal" class="bg-gray-500 text-white px-3 py-1 mt-3 rounded w-full">Fermer</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+
+</body>
+
+
+</html>
