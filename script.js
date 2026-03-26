@@ -14,6 +14,7 @@ const rechercheInput = document.getElementById("recherche");
 const modale = document.getElementById("modals");
 const modalContent = document.getElementById("modalContent");
 const fermerModal = document.getElementById("fermerModal");
+const erreur = document.getElementById("erreur");
 
 closeModal.addEventListener("click", () => modal.classList.add("hidden"));
 fermerModal.addEventListener("click", () => modale.classList.add("hidden"));
@@ -34,6 +35,12 @@ save.addEventListener("click", () => {
   const nom = nomInput.value.trim();
   const age = ageInput.value.trim();
   const moyenne = moyenneInput.value.trim();
+
+  const m = parseFloat(moyenne);
+  if (isNaN(m) || m < 0 || m > 20) {
+    erreur.textContent = "note valable entre 0-20";
+    return;
+  }
 
   if (!prenom || !nom || !age || !moyenne)
     return alert("Remplissez tous les champs !");
